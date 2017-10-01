@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Bruce Wayne</Authors>
+    <Company>Bruce Wayne</Company>
+    <Description>Weibo OAuth 2.0 provider for .net core 2.0</Description>
+    <PackageProjectUrl>https://github.com/ws-dotnet-core/WeiboOAuth2.Provider</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ws-dotnet-core/WeiboOAuth2.Provider</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>WeiboOAuth2.Provider.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+</Project>
