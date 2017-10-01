@@ -2,11 +2,15 @@
 ![](logo.png)
 Weibo OAuth 2.0 provider for .net core 2.0
 
+github : https://github.com/ws-dotnet-core/WeiboOAuth2.Provider
+
+nuget(current version) : https://www.nuget.org/packages/WeiboOAuth2.Provider/1.0.0
+
   ```code
 [T]: Implemented
 [F]: Not implemented
 
-OAuth2（Guider）
+OAuth2（Guider）VERSION 1.0.0
 [T]Request authorization:	oauth2/authorize	
 [T]Get authorization:	oauth2/access_token	
 [F]Authorization Query:	oauth2/get_token_info	
