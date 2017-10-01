@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace WeiboOAuth2.Provider.Src {
 
+    /// <summary>
+    /// The base provider of weibo oauth 2.0.
+    /// </summary>
     public class WeiboOAuthV2Provider : IWeiboOAuthV2Provider<WeiboSuccessToken, WeiboUser> {
 
         protected IWeiboOAuthV2Option options;
@@ -15,6 +18,12 @@ namespace WeiboOAuth2.Provider.Src {
             this.options = options;
         }
 
+        /// <summary>
+        /// Try to fetch access token with code and redirect_url.
+        /// </summary>
+        /// <param name="code">code returns from weibo.</param>
+        /// <param name="redirect_url">url you want ro redirect to.</param>
+        /// <returns>token, succeed or not, error if have</returns>
         public async Task<(WeiboSuccessToken, bool, string)> GetWeiboTokenByCodeAsync(string code, string redirect_url) {
             var oars = $"client_id={options.AppID}&client_secret={options.AppSecret}&grant_type=authorization_code";
             HttpContent hc = new StringContent(oars, Encoding.UTF8, "application/x-www-form-urlencoded");
@@ -42,6 +51,12 @@ namespace WeiboOAuth2.Provider.Src {
             }
         }
 
+        /// <summary>
+        /// Try to get the details of weibo user with the access_token and uid.
+        /// </summary>
+        /// <param name="uid">uid of weibo user.</param>
+        /// <param name="access_token">access token from provider.</param>
+        /// <returns>weibo user, succeed or not, error if have</returns>
         public async Task<(WeiboUser, bool, string)> GetWeiboUserInfosAsync(string uid, string access_token) {
             using (var client = new HttpClient()) {
                 try {
@@ -58,6 +73,11 @@ namespace WeiboOAuth2.Provider.Src {
             }
         }
 
+        /// <summary>
+        /// Try to delete the authentication with access_token.
+        /// </summary>
+        /// <param name="access_token"></param>
+        /// <returns>action result, succeed or not, error if have</returns>
         public async Task<(RevokeOAuth2Return, bool, string)> RevokeOAuth2Access(string access_token) {
             using (var client = new HttpClient()) {
                 try {

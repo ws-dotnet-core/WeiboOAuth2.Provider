@@ -6,6 +6,9 @@ using System.Text;
 
 namespace WeiboOAuth2.Provider.Src {
 
+    /// <summary>
+    /// Token if errors throws.
+    /// </summary>
     [JsonObject]
     public class WeiboErrorToken {
 
@@ -26,6 +29,9 @@ namespace WeiboOAuth2.Provider.Src {
 
     }
 
+    /// <summary>
+    /// Token returned if succeed.
+    /// </summary>
     [JsonObject]
     public class WeiboSuccessToken {
 
@@ -46,6 +52,9 @@ namespace WeiboOAuth2.Provider.Src {
 
     }
 
+    /// <summary>
+    /// The return of revoke action.
+    /// </summary>
     [JsonObject]
     public class RevokeOAuth2Return {
 
@@ -61,21 +70,29 @@ namespace WeiboOAuth2.Provider.Src {
 
         [JsonProperty("error")]
         public string Error { get; set; }
+        public bool ShouldSerializeError() { return !this.Return; }
 
         [JsonProperty("error_code")]
         public int ErrorCode { get; set; }
+        public bool ShouldSerializeErrorCode() { return !this.Return; }
 
         [JsonProperty("request")]
         public string Request { get; set; }
+        public bool ShouldSerializeRequest() { return !this.Return; }
 
         [JsonProperty("error_uri")]
         public string ErrorUri { get; set; }
+        public bool ShouldSerializeErrorUri() { return !this.Return; }
 
         [JsonProperty("error_description")]
         public string ErrorDescription { get; set; }
+        public bool ShouldSerializeErrorDescription() { return !this.Return; }
 
     }
 
+    /// <summary>
+    /// The weibo user details from oauth 2.0
+    /// </summary>
     public class WeiboUser {
         public long id { get; set; }
         public string idstr { get; set; }

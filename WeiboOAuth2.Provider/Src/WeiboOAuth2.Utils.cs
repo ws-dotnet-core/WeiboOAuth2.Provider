@@ -4,6 +4,9 @@ using System.Text;
 
 namespace WeiboOAuth2.Provider.Src {
 
+    /// <summary>
+    /// Errors map of oauth 2.0 .
+    /// </summary>
     public static class WeiboOAuth2Errors {
         public const string GetErrorMessageFailed = "try get error message from response failed.";
         public const string GetAccessTokenFailed = "get weibo access token failed.";

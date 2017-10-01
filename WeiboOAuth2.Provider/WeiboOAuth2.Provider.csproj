@@ -9,6 +9,7 @@
     <PackageProjectUrl>https://github.com/ws-dotnet-core/WeiboOAuth2.Provider</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ws-dotnet-core/WeiboOAuth2.Provider</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
+    <PackageTags>weibo oauth2.0</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
