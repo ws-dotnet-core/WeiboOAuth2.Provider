@@ -20,6 +20,7 @@ Other interfaces:
     [F]account/rate_limit_status	Gets the current authorized user API Access frequency limit
     [F]account/get_uid	        To obtain a user's UID after authorization
     [F]account/profile/email	        Get user's contact mailbox after authorization
+    [T]https://api.weibo.com/2/users/show.json      get user infos
   ```
 
 Package Manager
@@ -105,7 +106,12 @@ public get WeiboAuth() {
  var (result, succeed, error) = await this.weibo.GetWeiboTokenByCodeAsync(code, redirect_url);
 ```
 
-### 6. Authorization Recycle
+### 5. Get userinfos
+```CSharp
+var (infos, succeed02, error02) = await this.weibo.GetWeiboUserInfosAsync(result.Uid, result.AccessToken);
+```
+
+### 7. Authorization Recycle
 ```CSharp
 var (result, succeed, error) = await this.weibo.RevokeOAuth2Access(access_token);
 ```
