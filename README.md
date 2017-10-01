@@ -106,7 +106,7 @@ public get WeiboAuth() {
  var (result, succeed, error) = await this.weibo.GetWeiboTokenByCodeAsync(code, redirect_url);
 ```
 
-### 5. Get userinfos
+### 6. Get userinfos
 ```CSharp
 var (infos, succeed02, error02) = await this.weibo.GetWeiboUserInfosAsync(result.Uid, result.AccessToken);
 ```
