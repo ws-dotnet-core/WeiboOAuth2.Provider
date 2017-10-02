@@ -4,7 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace WeiboOAuth2.Provider.Src {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable IDE1006 // Naming Styles
+
+namespace WeiboOAuth2.Provider {
 
     /// <summary>
     /// Token if errors throws.
@@ -94,6 +97,7 @@ namespace WeiboOAuth2.Provider.Src {
     /// The weibo user details from oauth 2.0
     /// </summary>
     public class WeiboUser {
+
         public long id { get; set; }
         public string idstr { get; set; }
         public int _class { get; set; }
@@ -222,3 +226,6 @@ namespace WeiboOAuth2.Provider.Src {
     }
 
 }
+
+#pragma warning restore IDE1006 // Naming Styles
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

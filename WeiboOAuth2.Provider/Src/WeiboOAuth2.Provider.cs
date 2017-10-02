@@ -5,15 +5,22 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WeiboOAuth2.Provider.Src {
+namespace WeiboOAuth2.Provider {
 
     /// <summary>
     /// The base provider of weibo oauth 2.0.
     /// </summary>
     public class WeiboOAuthV2Provider : IWeiboOAuthV2Provider<WeiboSuccessToken, WeiboUser> {
 
+        /// <summary>
+        /// The injected options for provider.
+        /// </summary>
         protected IWeiboOAuthV2Option options;
 
+        /// <summary>
+        /// Create a provider with injectable options.
+        /// </summary>
+        /// <param name="options"></param>
         public WeiboOAuthV2Provider(IWeiboOAuthV2Option options) {
             this.options = options;
         }
