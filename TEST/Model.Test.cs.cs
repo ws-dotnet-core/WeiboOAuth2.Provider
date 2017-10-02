@@ -51,6 +51,15 @@ namespace TEST {
             Assert.IsNull(jstruct.Request);
             Assert.IsNull(jstruct.ErrorUri);
             Assert.IsNull(jstruct.ErrorDescription);
+
+            var json2 = "{'error':'aaaa','error_code':20000, 'request':'bbbbbb', 'error_uri':'cccccc', 'error_description':'dddddd'}";
+            var jstruct2 = JsonConvert.DeserializeObject<WeiboSuccessToken>(json2);
+
+            Assert.AreEqual("aaaa", jstruct2.Error, string.Format("Expected for '{0}': true; Actual: {1}", "aaaa", jstruct2.Error));
+            Assert.AreEqual(20000, jstruct2.ErrorCode, string.Format("Expected for '{0}': true; Actual: {1}", 20000, jstruct2.ErrorCode));
+            Assert.AreEqual("bbbbbb", jstruct2.Request, string.Format("Expected for '{0}': true; Actual: {1}", "bbbbbb", jstruct2.Request));
+            Assert.AreEqual("cccccc", jstruct2.ErrorUri, string.Format("Expected for '{0}': true; Actual: {1}", "cccccc", jstruct2.ErrorUri));
+            Assert.AreEqual("dddddd", jstruct2.ErrorDescription, string.Format("Expected for '{0}': true; Actual: {1}", "dddddd", jstruct2.ErrorDescription));
         }
 
         [TestMethod]

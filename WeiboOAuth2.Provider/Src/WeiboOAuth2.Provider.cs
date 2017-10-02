@@ -40,9 +40,9 @@ namespace WeiboOAuth2.Provider {
                     var conStr = await result.Content.ReadAsStringAsync();
                     try {
                         var succ_token = JsonConvert.DeserializeObject<WeiboSuccessToken>(conStr);
-                        return succ_token == null || succ_token.AccessToken == null ?
-                            (default(WeiboSuccessToken), false, succ_token?.ErrorDescription) :
-                            (succ_token, true, null);
+                        return succ_token == null  ? (default(WeiboSuccessToken), false, WeiboOAuth2Errors.GetAccessTokenFailed) :
+                            succ_token.AccessToken == null?
+                            (succ_token, false, succ_token.Error):(succ_token, true, null);
                     } catch {
                         return (default(WeiboSuccessToken), false, WeiboOAuth2Errors.DeserializeAccessTokenFailed);
                     }
