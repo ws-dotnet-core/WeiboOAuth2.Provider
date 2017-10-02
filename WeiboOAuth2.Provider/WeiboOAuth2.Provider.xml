@@ -4,44 +4,29 @@
         <name>WeiboOAuth2.Provider</name>
     </assembly>
     <members>
-        <member name="T:WeiboOAuth2.Provider.Src.IWeiboOAuthV2Option">
+        <member name="T:WeiboOAuth2.Provider.IWeiboOAuthV2Option">
             <summary>
             Options interface to make sure providing the app-id and app-secret. For IoC.
             </summary>
         </member>
-        <member name="T:WeiboOAuth2.Provider.Src.IWeiboOAuthV2Provider`2">
+        <member name="P:WeiboOAuth2.Provider.IWeiboOAuthV2Option.AppID">
+            <summary>
+            your app id
+            </summary>
+        </member>
+        <member name="P:WeiboOAuth2.Provider.IWeiboOAuthV2Option.AppSecret">
+            <summary>
+            your app secret
+            </summary>
+        </member>
+        <member name="T:WeiboOAuth2.Provider.IWeiboOAuthV2Provider`2">
             <summary>
             The contract of provider base.
             </summary>
             <typeparam name="TToken"></typeparam>
             <typeparam name="TWeiboUser"></typeparam>
         </member>
-        <member name="T:WeiboOAuth2.Provider.Src.WeiboErrorToken">
-            <summary>
-            Token if errors throws.
-            </summary>
-        </member>
-        <member name="T:WeiboOAuth2.Provider.Src.WeiboSuccessToken">
-            <summary>
-            Token returned if succeed.
-            </summary>
-        </member>
-        <member name="T:WeiboOAuth2.Provider.Src.RevokeOAuth2Return">
-            <summary>
-            The return of revoke action.
-            </summary>
-        </member>
-        <member name="T:WeiboOAuth2.Provider.Src.WeiboUser">
-            <summary>
-            The weibo user details from oauth 2.0
-            </summary>
-        </member>
-        <member name="T:WeiboOAuth2.Provider.Src.WeiboOAuthV2Provider">
-            <summary>
-            The base provider of weibo oauth 2.0.
-            </summary>
-        </member>
-        <member name="M:WeiboOAuth2.Provider.Src.WeiboOAuthV2Provider.GetWeiboTokenByCodeAsync(System.String,System.String)">
+        <member name="M:WeiboOAuth2.Provider.IWeiboOAuthV2Provider`2.GetWeiboTokenByCodeAsync(System.String,System.String)">
             <summary>
             Try to fetch access token with code and redirect_url.
             </summary>
@@ -49,7 +34,7 @@
             <param name="redirect_url">url you want ro redirect to.</param>
             <returns>token, succeed or not, error if have</returns>
         </member>
-        <member name="M:WeiboOAuth2.Provider.Src.WeiboOAuthV2Provider.GetWeiboUserInfosAsync(System.String,System.String)">
+        <member name="M:WeiboOAuth2.Provider.IWeiboOAuthV2Provider`2.GetWeiboUserInfosAsync(System.String,System.String)">
             <summary>
             Try to get the details of weibo user with the access_token and uid.
             </summary>
@@ -57,16 +42,110 @@
             <param name="access_token">access token from provider.</param>
             <returns>weibo user, succeed or not, error if have</returns>
         </member>
-        <member name="M:WeiboOAuth2.Provider.Src.WeiboOAuthV2Provider.RevokeOAuth2Access(System.String)">
+        <member name="M:WeiboOAuth2.Provider.IWeiboOAuthV2Provider`2.RevokeOAuth2Access(System.String)">
             <summary>
             Try to delete the authentication with access_token.
             </summary>
             <param name="access_token"></param>
             <returns>action result, succeed or not, error if have</returns>
         </member>
-        <member name="T:WeiboOAuth2.Provider.Src.WeiboOAuth2Errors">
+        <member name="T:WeiboOAuth2.Provider.ErrorBase">
+            <summary>
+            Token if errors throws.
+            </summary>
+        </member>
+        <member name="T:WeiboOAuth2.Provider.WeiboSuccessToken">
+            <summary>
+            Token returned if succeed.
+            </summary>
+        </member>
+        <member name="T:WeiboOAuth2.Provider.RevokeOAuth2Return">
+            <summary>
+            The return of revoke action.
+            </summary>
+        </member>
+        <member name="T:WeiboOAuth2.Provider.WeiboUser">
+            <summary>
+            The weibo user details from oauth 2.0
+            </summary>
+        </member>
+        <member name="T:WeiboOAuth2.Provider.WeiboOAuthV2Provider">
+            <summary>
+            The base provider of weibo oauth 2.0.
+            </summary>
+        </member>
+        <member name="F:WeiboOAuth2.Provider.WeiboOAuthV2Provider.options">
+            <summary>
+            The injected options for provider.
+            </summary>
+        </member>
+        <member name="M:WeiboOAuth2.Provider.WeiboOAuthV2Provider.#ctor(WeiboOAuth2.Provider.IWeiboOAuthV2Option)">
+            <summary>
+            Create a provider with injectable options.
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:WeiboOAuth2.Provider.WeiboOAuthV2Provider.GetWeiboTokenByCodeAsync(System.String,System.String)">
+            <summary>
+            Try to fetch access token with code and redirect_url.
+            </summary>
+            <param name="code">code returns from weibo.</param>
+            <param name="redirect_url">url you want ro redirect to.</param>
+            <returns>token, succeed or not, error if have</returns>
+        </member>
+        <member name="M:WeiboOAuth2.Provider.WeiboOAuthV2Provider.GetWeiboUserInfosAsync(System.String,System.String)">
+            <summary>
+            Try to get the details of weibo user with the access_token and uid.
+            </summary>
+            <param name="uid">uid of weibo user.</param>
+            <param name="access_token">access token from provider.</param>
+            <returns>weibo user, succeed or not, error if have</returns>
+        </member>
+        <member name="M:WeiboOAuth2.Provider.WeiboOAuthV2Provider.RevokeOAuth2Access(System.String)">
+            <summary>
+            Try to delete the authentication with access_token.
+            </summary>
+            <param name="access_token"></param>
+            <returns>action result, succeed or not, error if have</returns>
+        </member>
+        <member name="T:WeiboOAuth2.Provider.WeiboOAuth2Errors">
             <summary>
             Errors map of oauth 2.0 .
+            </summary>
+        </member>
+        <member name="F:WeiboOAuth2.Provider.WeiboOAuth2Errors.GetErrorMessageFailed">
+            <summary>
+            Error : try get error message from response failed.
+            </summary>
+        </member>
+        <member name="F:WeiboOAuth2.Provider.WeiboOAuth2Errors.GetAccessTokenFailed">
+            <summary>
+            Error : get weibo access token failed.
+            </summary>
+        </member>
+        <member name="F:WeiboOAuth2.Provider.WeiboOAuth2Errors.GetWeiboUserInfosFailed">
+            <summary>
+            Error : get weibo user infos failed.
+            </summary>
+        </member>
+        <member name="F:WeiboOAuth2.Provider.WeiboOAuth2Errors.GetRevokeTokenFailed">
+            <summary>
+            Error : revoke failed. unknown error.
+            </summary>
+        </member>
+        <member name="F:WeiboOAuth2.Provider.WeiboOAuth2Errors.DeserializeAccessTokenFailed">
+            <summary>
+            Error : try read weibo access token from response failed.
+            </summary>
+        </member>
+        <member name="F:WeiboOAuth2.Provider.WeiboOAuth2Errors.DeserializeWeiboUserInfosFailed">
+            <summary>
+            Error : try read weibo userinfos from response failed.
+            </summary>
+        </member>
+        <member name="F:WeiboOAuth2.Provider.WeiboOAuth2Errors.DeserializeRevokeTokenFailed">
+            <summary>
+            Error : try read weibo revoke message from response failed.
             </summary>
         </member>
     </members>

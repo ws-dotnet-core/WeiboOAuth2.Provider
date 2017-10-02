@@ -13,13 +13,13 @@ namespace WeiboOAuth2.Provider {
     /// Token if errors throws.
     /// </summary>
     [JsonObject]
-    public class WeiboErrorToken {
+    public class ErrorBase {
 
         [JsonProperty("error")]
         public string Error { get; set; }
 
         [JsonProperty("error_code")]
-        public int ErrorCode { get; set; }
+        public int? ErrorCode { get; set; }
 
         [JsonProperty("request")]
         public string Request { get; set; }
@@ -30,13 +30,19 @@ namespace WeiboOAuth2.Provider {
         [JsonProperty("error_description")]
         public string ErrorDescription { get; set; }
 
+        public bool ShouldSerializeError() { return this.Error!=null; }
+        public bool ShouldSerializeErrorCode() { return this.ErrorCode!=null; }
+        public bool ShouldSerializeRequest() { return this.Request!=null; }
+        public bool ShouldSerializeErrorUri() { return this.ErrorUri!=null; }
+        public bool ShouldSerializeErrorDescription() { return this.ErrorDescription!=null; }
+
     }
 
     /// <summary>
     /// Token returned if succeed.
     /// </summary>
     [JsonObject]
-    public class WeiboSuccessToken {
+    public class WeiboSuccessToken : ErrorBase {
 
         [JsonProperty("access_token")]
         public string AccessToken { get; set; }
@@ -45,13 +51,19 @@ namespace WeiboOAuth2.Provider {
         public string RemindIn { get; set; }
 
         [JsonProperty("expires_in")]
-        public int ExpiresIn { get; set; }
+        public int? ExpiresIn { get; set; }
 
         [JsonProperty("uid")]
         public string Uid { get; set; }
 
         [JsonProperty("isRealName")]
-        public bool IsRealName { get; set; }
+        public bool? IsRealName { get; set; }
+
+        public bool ShouldSerializeAccessToken() { return this.AccessToken != null; }
+        public bool ShouldSerializeRemindIn() { return this.RemindIn != null; }
+        public bool ShouldSerializeExpiresIn() { return this.ExpiresIn != null; }
+        public bool ShouldSerializeUid() { return this.Uid != null; }
+        public bool ShouldSerializeIsRealName() { return this.IsRealName != null; }
 
     }
 
@@ -59,10 +71,10 @@ namespace WeiboOAuth2.Provider {
     /// The return of revoke action.
     /// </summary>
     [JsonObject]
-    public class RevokeOAuth2Return {
+    public class RevokeOAuth2Return : ErrorBase {
 
         [JsonProperty("result")]
-        private string ReturnStr = "false";
+        public string ReturnStr = "false";
         public bool ShouldDeserializeReturnStr() { return true; }
         public bool ShouldSerializeReturnStr() { return false; }
 
@@ -71,25 +83,11 @@ namespace WeiboOAuth2.Provider {
         public bool ShouldDeserializeReturn() { return false; }
         public bool ShouldSerializeReturn() { return true; }
 
-        [JsonProperty("error")]
-        public string Error { get; set; }
-        public bool ShouldSerializeError() { return !this.Return; }
-
-        [JsonProperty("error_code")]
-        public int ErrorCode { get; set; }
-        public bool ShouldSerializeErrorCode() { return !this.Return; }
-
-        [JsonProperty("request")]
-        public string Request { get; set; }
-        public bool ShouldSerializeRequest() { return !this.Return; }
-
-        [JsonProperty("error_uri")]
-        public string ErrorUri { get; set; }
-        public bool ShouldSerializeErrorUri() { return !this.Return; }
-
-        [JsonProperty("error_description")]
-        public string ErrorDescription { get; set; }
-        public bool ShouldSerializeErrorDescription() { return !this.Return; }
+        public new bool ShouldSerializeError() { return !this.Return; }
+        public new bool ShouldSerializeErrorCode() { return !this.Return; }
+        public new bool ShouldSerializeRequest() { return !this.Return; }
+        public new bool ShouldSerializeErrorUri() { return !this.Return; }
+        public new bool ShouldSerializeErrorDescription() { return !this.Return; }
 
     }
 
