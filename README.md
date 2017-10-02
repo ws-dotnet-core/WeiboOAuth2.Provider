@@ -4,11 +4,14 @@ Weibo OAuth 2.0 provider for .net core 2.0
 
 github : https://github.com/ws-dotnet-core/WeiboOAuth2.Provider
 
-nuget(current version) : https://www.nuget.org/packages/WeiboOAuth2.Provider/1.0.1
+nuget(current version) : https://www.nuget.org/packages/WeiboOAuth2.Provider/1.0.2
 
 ## UPDATE
 
-2017.10.02 : change the main namespace to "WeiboOAuth2.Provider", not "WeiboOAuth2.Provider.Src" .
+2017.10.02 : 
+
+1. change the main namespace to "WeiboOAuth2.Provider", not "WeiboOAuth2.Provider.Src" .
+2. fix the problem of no-error-return when redirect_url is wrong.
 
 ## Weibo OAuth 2.0
 
@@ -31,12 +34,12 @@ Other interfaces:
 
 Package Manager
 ```Package Manager
-PM > Install-Package WeiboOAuth2.Provider -Version 1.0.1
+PM > Install-Package WeiboOAuth2.Provider -Version 1.0.2
 ```
 
 .NET CLI
 ```.NET CLI
-> dotnet add package WeiboOAuth2.Provider --version 1.0.1
+> dotnet add package WeiboOAuth2.Provider --version 1.0.2
 ```
 
  ## Dependencies : 
