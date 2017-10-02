@@ -6,6 +6,12 @@ github : https://github.com/ws-dotnet-core/WeiboOAuth2.Provider
 
 nuget(current version) : https://www.nuget.org/packages/WeiboOAuth2.Provider/1.0.0
 
+## UPDATE
+
+2017.10.02 : change the main namespace to "WeiboOAuth2.Provider", not "WeiboOAuth2.Provider.Src" .
+
+## Weibo OAuth 2.0
+
   ```code
 [T]: Implemented
 [F]: Not implemented
