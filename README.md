@@ -4,7 +4,7 @@ Weibo OAuth 2.0 provider for .net core 2.0
 
 github : https://github.com/ws-dotnet-core/WeiboOAuth2.Provider
 
-nuget(current version) : https://www.nuget.org/packages/WeiboOAuth2.Provider/1.0.0
+nuget(current version) : https://www.nuget.org/packages/WeiboOAuth2.Provider/1.0.1
 
 ## UPDATE
 
@@ -31,12 +31,12 @@ Other interfaces:
 
 Package Manager
 ```Package Manager
-PM > Install-Package WeiboOAuth2.Provider -Version 1.0.0
+PM > Install-Package WeiboOAuth2.Provider -Version 1.0.1
 ```
 
 .NET CLI
 ```.NET CLI
-> dotnet add package WeiboOAuth2.Provider --version 1.0.0
+> dotnet add package WeiboOAuth2.Provider --version 1.0.1
 ```
 
  ## Dependencies : 
