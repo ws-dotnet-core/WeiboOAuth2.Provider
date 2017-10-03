@@ -6,6 +6,12 @@ github : https://github.com/ws-dotnet-core/WeiboOAuth2.Provider
 
 nuget(current version) : https://www.nuget.org/packages/WeiboOAuth2.Provider/1.0.2
 
+## Travis CI
+[![Build Status](https://travis-ci.org/ws-dotnet-core/WeiboOAuth2.Provider.svg?branch=master)](https://travis-ci.org/ws-dotnet-core/WeiboOAuth2.Provider)
+
+the latest version will be build through Travis CI .
+![](ci.png)
+
 ## UPDATE
 
 2017.10.02 : 
