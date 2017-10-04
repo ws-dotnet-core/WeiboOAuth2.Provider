@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeiboOAuth2.Provider", "WeiboOAuth2.Provider\WeiboOAuth2.Provider.csproj", "{D12D9317-B871-4E38-B057-0D23ADEA5E56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEST", "TEST\TEST.csproj", "{949A949B-22CB-4801-AF85-FC2D9B752A82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XTEST", "XTEST\XTEST.csproj", "{695F5EF8-B03B-4020-818B-62A3275468C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{D12D9317-B871-4E38-B057-0D23ADEA5E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D12D9317-B871-4E38-B057-0D23ADEA5E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D12D9317-B871-4E38-B057-0D23ADEA5E56}.Release|Any CPU.Build.0 = Release|Any CPU
-		{949A949B-22CB-4801-AF85-FC2D9B752A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{949A949B-22CB-4801-AF85-FC2D9B752A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{949A949B-22CB-4801-AF85-FC2D9B752A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{949A949B-22CB-4801-AF85-FC2D9B752A82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{695F5EF8-B03B-4020-818B-62A3275468C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{695F5EF8-B03B-4020-818B-62A3275468C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{695F5EF8-B03B-4020-818B-62A3275468C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{695F5EF8-B03B-4020-818B-62A3275468C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

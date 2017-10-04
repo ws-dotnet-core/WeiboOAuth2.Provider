@@ -49,6 +49,16 @@
             <param name="access_token"></param>
             <returns>action result, succeed or not, error if have</returns>
         </member>
+        <member name="T:WeiboOAuth2.Provider.Src.WeiboOAuth2Extensions">
+            <summary>
+            Weibo oauth 2.0 extensions.
+            </summary>
+        </member>
+        <member name="T:WeiboOAuth2.Provider.Src.WeiboOAuth2Middleware">
+            <summary>
+            The middleware of weibo oauth 2.0
+            </summary>
+        </member>
         <member name="T:WeiboOAuth2.Provider.ErrorBase">
             <summary>
             Token if errors throws.
